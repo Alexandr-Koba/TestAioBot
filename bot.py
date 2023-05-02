@@ -18,7 +18,7 @@ async def send_welcome(message: types.Message):
     Отправляет приветственное сообщение и помощь по использованию бота
     """
     text = md.text(
-        md.hbold("Привет, я бот!"), "\n\n",
+        md.hbold("Привет, я бот Капитан-Бенгард!"), "\n\n",
         "Я могу помочь тебе в разных вещах. Вот список доступных команд:\n",
         "/help - получить помощь\n",
         "/about - узнать информацию обо мне\n",
@@ -48,7 +48,7 @@ async def send_about(message: types.Message):
     """
     Отправляет информацию о боте
     """
-    text = "Я бот, созданный на aiogram."
+    text = "Я бот, Капитан-Бенгард"
     await message.reply(text)
 
 # хендлер для команды /echo
@@ -68,7 +68,10 @@ async def send_photo(message: types.Message):
     # Открытие файла изображения
     with open('./img/foto1.jpg', 'rb') as photo:
         # Отправка фотографии в сообщении
-        await message.answer_photo(photo, caption='Описание фотографии')
+        await message.answer_photo(photo, caption='Очень охрененная инфа "CЮДА НА..!"')
+
+        text = "Капитан-Бенгард Представляет!"
+        await message.reply(text)
 
 # запуск бота
 if __name__ == '__main__':
