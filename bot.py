@@ -23,7 +23,8 @@ async def send_welcome(message: types.Message):
         "/help - получить помощь\n",
         "/about - узнать информацию обо мне\n",
         "/echo - повторить ваше сообщение\n",
-        "/photo - Фото"
+        "/photo - Фото\n",
+        "/price - показать ЦЕНЫ НА МАРШРУТЫ"
     )
     await message.reply(text, parse_mode=ParseMode.MARKDOWN)
 
@@ -38,7 +39,8 @@ async def send_help(message: types.Message):
         "/help - получить помощь\n",
         "/about - узнать информацию обо мне\n",
         "/echo - повторить ваше сообщение\n",
-        "/photo - Фото"
+        "/photo - Фото\n",
+        "/price - показать ЦЕНЫ НА МАРШРУТЫ"
     )
     await message.reply(text, parse_mode=ParseMode.MARKDOWN)
 
@@ -49,6 +51,15 @@ async def send_about(message: types.Message):
     Отправляет информацию о боте
     """
     text = "Я бот, Капитан-Бенгард"
+    await message.reply(text)
+
+# хендлер для команды /price
+@dp.message_handler(commands=['price'])
+async def send_about(message: types.Message):
+    """
+    Отправляет информацию о цене.
+    """
+    text = "Маршрут Лайт = 1500 бат.\n Маршрут Мидл = 2000 бат.\n Маршрут Хард = 3000 бат."
     await message.reply(text)
 
 # хендлер для команды /echo
